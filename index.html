@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="/public/css/jquery.bxslider.css" rel="slider">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/jquery.bxslider.js"></script>
+    <title>고양이 사랑방</title>
+    <script>
+        $(function() {
+            $(".slider-container").bxSlider({
+                auto:true
+            });
+            $("#side-top").on("click",function () {
+                $('html').animate({scrollTop: '0'}, 680);
+            });
+        });
+    </script>
+</head>
+
+<!--
+    전체적으로 이미지드링 너무 큼 사이즈 줄일필요가 있다고 봄
+    70퍼로 크기 줄이기
+    그리고 너무 그림만있음 간단한 설명이나 그런것들도 있으면 좋겠음
+    너무 싼티남
+
+-->
+
+
+
+<body>
+    <button class="side-btn" id="side-top">
+        <img src="/public/images/free-icon-right-arrow-271228.png">
+    </button>
+    <button class="side-btn" id="side-login" onclick="showLogin()">
+        <img src="/public/images/free-icon-login-7856156.png">
+    </button>
+    <button class="side-btn" id="side-signup" onclick="showSignup()">
+        <img src="/public/images/free-icon-user-15228538.png">
+    </button>
+    <button class="side-btn" id="side-home" onclick="showHome()">
+        <img src="/public/images/free-icon-home-15954333.png">
+    </button>
+
+    <header>
+        <div id="header-left-space"></div> <!-- 왼쪽 여백 -->
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://section.blog.naver.com" target="_blank"><i class="fa-solid fa-blog"></i></a>
+            <a href="https://section.cafe.naver.com" target="_blank"><i class="fa-solid fa-mug-saucer"></i></a>
+        </div>
+        <div id="header-center-space"></div> <!-- 가운데 여백 -->
+        <div class="header-buttons">
+            <button onclick="showLogin()">로그인</button>
+            <button onclick="showSignup()">회원가입</button>
+        </div>
+        <div class="header-serchInput">
+            <input type="text" id="searchInput" placeholder=" 검색어 입력">
+            <button onclick="handleSearch()">검색</button>
+        </div>
+        <div id="header-right-space"></div> <!-- 오른쪽 여백 -->
+    </header>
+
+    <!-- 로고부분 -->
+    <section class="banner">
+        <div class="logo">
+            <a onclick="showHome()"><img src="/public/images/Cat-Lounge_Logo.png"></a>
+        </div>
+        <div class="catlounge">
+            <a onclick="showHome()"><h1>고양이 사랑방</h1>Cat Lounge</a>
+        </div>
+        <div id="logo-space"></div>
+    </section>
+
+    <!-- 네비부분 -->
+    <nav class="nav">
+        <div id="nav-space"></div>
+        <div class="nav-catlaunge">
+            <b>고양이 사랑방</b>
+            <div class="catlaunge-dropdown">
+                <b>
+                    <a href="#" onclick="showIntro()">소개</a>
+                    <a href="#" onclick="showStep()">분양 절차</a>
+                </b>
+            </div>
+        </div>
+        <div class="nav-adoption">
+            <b>고양이 <b class="b-bolder">분양</b></b>
+            <div class="adoption-dropdown">
+                <b>
+                    <a href="#" onclick="showMunchkin()">먼치킨</a>
+                    <a href="#" onclick="showScottishFold()">스코티쉬폴드</a>
+                    <a href="#" onclick="showBritishShorthair()">브리티쉬숏헤어</a>
+                    <a href="#" onclick="showAbyssinian()">아비시니안</a>
+                    <a href="#" onclick="showAmericanShorthair()">아메리칸숏헤어</a>
+                    <a href="#" onclick="showRagdoll()">렉돌</a>
+                    <a href="#" onclick="showNorwegianForest()">노르웨이숲</a>
+                    <a href="#" onclick="showPersian()">페르시안</a>
+                    <a href="#" onclick="showRussianBlueOrSiamese()">레이상블루/샴</a>
+                    <a href="#" onclick="showBengal()">뱅갈</a>
+                    <a href="#" onclick="showMaineCoon()">메인쿤</a>
+                    <a href="#" onclick="showSpecial()">특수묘</a>
+                </b>
+            </div>
+        </div>
+        <div class="nav-foster">
+            <b><b class="b-bolder">임시보호</b> 서비스</b>
+            <div class="foster-dropdown">
+                <b>
+                    <a href="#">서비스 및 시설</a>
+                    <a href="#">예약</a>
+                </b>
+            </div>
+        </div>
+        <div class="nav-community">
+            <b>커뮤니티</b>
+        </div>
+        <div class="nav-announcements">
+            <b>공지사항</b>
+        </div>
+        <div id="nav-space"></div>
+    </nav>
+
+    <!-- 메인 부분 -->
+    <div id="app">
+    <!-- 이미지 슬라이더  -->
+    <section class="image-slider">
+        <div class="slider-container" id="slider-container">
+            <img src="/public/images/image1.png" alt="image" class="slider-image">
+            <img src="/public/images/image2.png" alt="image" class="slider-image">
+            <img src="/public/images/image3.png" alt="image" class="slider-image">
+        </div>
+    </section>
+
+    <!-- 시설 소개 -->
+    <section class="main-facility">
+        <div id="main-intro">
+            <div class="main-title">
+                <b class="b-3em">시설</b> 소개
+            </div>
+            <div class="title-content">
+                저희 고양이 사랑방은 이런저런 시설들도있고 깨끗하게 관리도하고<br>
+                건강관리도하고 스트레스도 덜받게 잘놀아주고 아주 좋아요~
+            </div>
+        </div>
+        <hr id="main-hr">
+        <div class="iframe-v">
+            <iframe width="1000" height="500" src="https://www.youtube.com/embed/j8XkxDuFq8w?si=UqgDJSTRU_U2pk93" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- 분양 설명 -->
+    <section class="main-adoption">
+        <div id="main-intro">
+            <div class="main-title">
+                분양 <b class="b-3em">소개</b>
+            </div>
+            <div class="title-content">
+                고양이를 분양하세요~<br>
+                귀엽고 아주 좋아요~
+            </div>
+        </div>
+        <hr id="main-hr">
+        <div class="adoption-list">
+            <ul class="adoption-list-ul">
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <img src="" alt="고양이">
+                    </a>
+                </li>
+            </ul>
+            <button class="btn1" type="submit" aria-label="더 많은 고양이 사진 보기">더보기</button>
+        </div>
+    </section>
+
+    <!-- 분양 후기 설명 -->
+    <section class="main-stories ">
+        <section class="main-adoption">
+            <div id="main-intro">
+                <div class="main-title">
+                    분양 <b class="b-3em">후기</b>
+                </div>
+                <div class="title-content">
+                    여러분들의 분양 후기를 적어주세요~<br>
+                    다른분들에게 자랑도할수있고 귀여운 고양이들도 구경할수있어요~
+                </div>
+            </div>
+            <hr id="main-hr">
+            <ul class="story-list">
+                <li>
+                    <img src="story1.jpg" alt="고양이 후기 1">
+                    <p>이 고양이는 정말 사랑스럽고 집 분위기를 밝게 해줍니다!</p>
+                </li>
+                <li>
+                    <img src="story2.jpg" alt="고양이 후기 2">
+                    <p>분양 후 처음 며칠은 낯설어했지만, 지금은 너무 잘 적응했어요!</p>
+                </li>
+                <li>
+                    <img src="story3.jpg" alt="고양이 후기 3">
+                    <p>고양이와 함께한 시간이 정말 행복합니다. 적극 추천해요!</p>
+                </li>
+            </ul>
+            <button class="btn1" type="submit" aria-label="더 많은 후기 보기">더보기</button>
+    </section>
+
+    <!-- 임시보호 서비스 설명 -->
+    <section class="main-foster">
+        <div id="main-intro">
+            <div class="main-title">
+                <b class="b-3em">임시보호</b> 서비스
+            </div>
+            <div class="title-content">
+                저희는 임시보호도 가능합니다~<br>
+                다시 오시기 전까지 고양이들이 안외롭게 해드려요~
+            </div>
+        </div>
+        <hr id="main-hr">
+        <div class="foster-video">
+             <img src="video.png" alt="video">
+        </div>
+    </section>
+    </div>
+
+    <!-- 푸터 부분 -->
+    <footer>
+        <div class="footer-service">
+            <div class="footer-buttons">
+                <button class="button-gray">찾아오시는 길</button>
+                <button class="button-gray">개인정보취급방침</button>
+                <button class="button-gray">이용 약관</button>
+                <button class="button-gray">고객센터 연락처</button>
+                <button class="button-gray">이용안내</button>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://section.blog.naver.com" target="_blank"><i class="fa-solid fa-blog"></i></a>
+                <a href="https://section.cafe.naver.com" target="_blank"><i class="fa-solid fa-mug-saucer"></i></a>
+            </div>
+        </div>
+        <div class="footer-information">
+            <p class="footer-text">
+                상호명: 고양이 사랑방&nbsp;&nbsp;대표: O O O&nbsp;&nbsp;주소: OO시 OO구 OO로 OO길 OOO
+                <br>
+                분양 콜 상담센터: OOO-OOOO-OOOO
+                <br>
+                사업자등록번호: OOO-OO-OOOOO  동물판매업 등록번호: 제OOO0000-0OO-OOOO-000O호
+                <br>
+                본 사이트의 이미지 및 컨텐츠 내용의 저작권은 고양이 사랑방에 있으며 사전동의 없이 무단 사용, 복사,도용 시 법적 문제가 될 수 있습니다.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
